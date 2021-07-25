@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="br" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Relógio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="relogio">
+    <div class="porca-central">
+    </div>
+    <div class="porca-central2">
+    </div>
+    <div class="indicadores">
+        <!--        cada div é uma hora-->
+        <div><br>
+            <!--            1-->
+        </div>
+        <div>
+            <!--            2-->
+        </div>
+        <div><br>
+            <p id="idTres" style="font-size: 20px">
+                3
+            </p>
+        </div>
+        <div>
+            <!--            4-->
+        </div>
+        <div>
+            <!--            5-->
+        </div>
+        <div><br>
+            <p id="idSeis" style="font-size: 20px">
+                6
+            </p>
+        </div>
+        <div>
+            <!--            7-->
+        </div>
+        <div>
+            <!--            8-->
+        </div>
+        <div><br>
+            <p id="idNove" style="font-size: 20px">
+                9
+            </p>
+        </div>
+        <div>
+            <!--            10-->
+        </div>
+        <div>
+            <!--            11-->
+        </div>
+        <div>
+            <br>
+            <p id="idDoze" style="font-size: 20px">
+                12
+            </p>
+        </div>
+    </div>
+<!--    div ponteiros-->
+    <div class="sec-hand">
+        <div class="sec">
+        </div>
+    </div>
+    <div class="min-hand">
+        <div class="min">
+        </div>
+    </div>
+    <div class="hr-hand">
+        <div class="hr">
+        </div>
+    </div>
+</div>
+<!--script movimento dos ponteiros-->
+<script>
+    const sec = document.querySelector(".sec");
+    const min = document.querySelector(".min");
+    const hr = document.querySelector(".hr");
+    setInterval(function () {
+        let time = new Date();
+        let secs = time.getSeconds() * 6;
+        let mins = time.getMinutes() * 6;
+        let hrs = time.getHours() * 30;
+        sec.style.transform = `rotateZ(${secs}deg)`;
+        min.style.transform = `rotateZ(${mins}deg)`;
+        hr.style.transform = `rotateZ(${hrs + (mins / 12)}deg)`;
+    });
+</script>
+</body>
+</html>
